@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Margin="20" VerticalAlignment="Center">
+            <TextBlock Text="Tải trọng P (kN)"/>
+            <TextBox Text="{Binding P, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
+
+            <TextBlock Text="Cường độ R (kN/m²)"/>
+            <TextBox Text="{Binding R, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
+
+            <Button Content="TÍNH DIỆN TÍCH" Command="{Binding TinhCommand}" 
+                Margin="0,15" Height="35" Background="DodgerBlue" Foreground="White"/>
+
+            <TextBlock HorizontalAlignment="Center" FontSize="16">
+            <Run Text="Kết quả: "/>
+            <Run Text="{Binding Area, StringFormat=\{0:F2\}}" FontWeight="Bold" Foreground="Red"/>
+            <Run Text=" m²"/>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
